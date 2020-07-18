@@ -4,7 +4,10 @@ import rospy
 from std_msgs.msg import String
 
 def simplePublisher():
+    
+    #Add Publisher 
     simple_publisher = rospy.Publisher('topic_1', String, queue_size = 10)
+    #inital ros_node "node_3"
     rospy.init_node('node_1', anonymous = False)
     rate = rospy.Rate(10)
 
