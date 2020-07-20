@@ -88,30 +88,6 @@ install/local/fast: preinstall/fast
 	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -121,17 +97,6 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -154,6 +119,41 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -188,34 +188,244 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-light_robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : light_robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+light_robot/CMakeFiles/listener.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/listener.dir/rule
+.PHONY : light_robot/CMakeFiles/listener.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_lisp: light_robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+listener: light_robot/CMakeFiles/listener.dir/rule
 
-.PHONY : std_msgs_generate_messages_lisp
+.PHONY : listener
 
 # fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make light_robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
+listener/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/listener.dir/build.make light_robot/CMakeFiles/listener.dir/build
+.PHONY : listener/fast
 
 # Convenience name for target.
-light_robot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : light_robot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+light_robot/CMakeFiles/light_robot_genpy.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/light_robot_genpy.dir/rule
+.PHONY : light_robot/CMakeFiles/light_robot_genpy.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_eus: light_robot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+light_robot_genpy: light_robot/CMakeFiles/light_robot_genpy.dir/rule
 
-.PHONY : std_msgs_generate_messages_eus
+.PHONY : light_robot_genpy
 
 # fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make light_robot/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
+light_robot_genpy/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/light_robot_genpy.dir/build.make light_robot/CMakeFiles/light_robot_genpy.dir/build
+.PHONY : light_robot_genpy/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/light_robot_generate_messages_py.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/light_robot_generate_messages_py.dir/rule
+.PHONY : light_robot/CMakeFiles/light_robot_generate_messages_py.dir/rule
+
+# Convenience name for target.
+light_robot_generate_messages_py: light_robot/CMakeFiles/light_robot_generate_messages_py.dir/rule
+
+.PHONY : light_robot_generate_messages_py
+
+# fast build rule for target.
+light_robot_generate_messages_py/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/light_robot_generate_messages_py.dir/build.make light_robot/CMakeFiles/light_robot_generate_messages_py.dir/build
+.PHONY : light_robot_generate_messages_py/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+.PHONY : light_robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_py: light_robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+.PHONY : std_msgs_generate_messages_py
+
+# fast build rule for target.
+std_msgs_generate_messages_py/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/std_msgs_generate_messages_py.dir/build.make light_robot/CMakeFiles/std_msgs_generate_messages_py.dir/build
+.PHONY : std_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/light_robot_genlisp.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/light_robot_genlisp.dir/rule
+.PHONY : light_robot/CMakeFiles/light_robot_genlisp.dir/rule
+
+# Convenience name for target.
+light_robot_genlisp: light_robot/CMakeFiles/light_robot_genlisp.dir/rule
+
+.PHONY : light_robot_genlisp
+
+# fast build rule for target.
+light_robot_genlisp/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/light_robot_genlisp.dir/build.make light_robot/CMakeFiles/light_robot_genlisp.dir/build
+.PHONY : light_robot_genlisp/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/roscpp_generate_messages_py.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : light_robot/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: light_robot/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+.PHONY : roscpp_generate_messages_py
+
+# fast build rule for target.
+roscpp_generate_messages_py/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/roscpp_generate_messages_py.dir/build.make light_robot/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : light_robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: light_robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_eus/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make light_robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+.PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+.PHONY : light_robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_nodejs: light_robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_nodejs/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make light_robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : light_robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_cpp: light_robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_cpp/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make light_robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+.PHONY : light_robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_cpp: light_robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : std_msgs_generate_messages_cpp
+
+# fast build rule for target.
+std_msgs_generate_messages_cpp/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make light_robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+.PHONY : std_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : light_robot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_eus: light_robot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/roscpp_generate_messages_eus.dir/build.make light_robot/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : light_robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_py: light_robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_py
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_py/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make light_robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+.PHONY : rosgraph_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+.PHONY : light_robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_lisp: light_robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_lisp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_lisp/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make light_robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/light_robot_generate_messages_eus.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/light_robot_generate_messages_eus.dir/rule
+.PHONY : light_robot/CMakeFiles/light_robot_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+light_robot_generate_messages_eus: light_robot/CMakeFiles/light_robot_generate_messages_eus.dir/rule
+
+.PHONY : light_robot_generate_messages_eus
+
+# fast build rule for target.
+light_robot_generate_messages_eus/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/light_robot_generate_messages_eus.dir/build.make light_robot/CMakeFiles/light_robot_generate_messages_eus.dir/build
+.PHONY : light_robot_generate_messages_eus/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : light_robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_nodejs: light_robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+.PHONY : roscpp_generate_messages_nodejs
+
+# fast build rule for target.
+roscpp_generate_messages_nodejs/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make light_robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/light_robot_generate_messages_lisp.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/light_robot_generate_messages_lisp.dir/rule
+.PHONY : light_robot/CMakeFiles/light_robot_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+light_robot_generate_messages_lisp: light_robot/CMakeFiles/light_robot_generate_messages_lisp.dir/rule
+
+.PHONY : light_robot_generate_messages_lisp
+
+# fast build rule for target.
+light_robot_generate_messages_lisp/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/light_robot_generate_messages_lisp.dir/build.make light_robot/CMakeFiles/light_robot_generate_messages_lisp.dir/build
+.PHONY : light_robot_generate_messages_lisp/fast
 
 # Convenience name for target.
 light_robot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
@@ -248,49 +458,109 @@ roscpp_generate_messages_lisp/fast:
 .PHONY : roscpp_generate_messages_lisp/fast
 
 # Convenience name for target.
-light_robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : light_robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+light_robot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+.PHONY : light_robot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_nodejs: light_robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+std_msgs_generate_messages_eus: light_robot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
-.PHONY : roscpp_generate_messages_nodejs
+.PHONY : std_msgs_generate_messages_eus
 
 # fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make light_robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
+std_msgs_generate_messages_eus/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make light_robot/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+.PHONY : std_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-light_robot/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : light_robot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+light_robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+.PHONY : light_robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_eus: light_robot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+std_msgs_generate_messages_lisp: light_robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : roscpp_generate_messages_eus
+.PHONY : std_msgs_generate_messages_lisp
 
 # fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/roscpp_generate_messages_eus.dir/build.make light_robot/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
+std_msgs_generate_messages_lisp/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make light_robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-light_robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : light_robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+light_robot/CMakeFiles/light_robot_gennodejs.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/light_robot_gennodejs.dir/rule
+.PHONY : light_robot/CMakeFiles/light_robot_gennodejs.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_cpp: light_robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+light_robot_gennodejs: light_robot/CMakeFiles/light_robot_gennodejs.dir/rule
 
-.PHONY : std_msgs_generate_messages_cpp
+.PHONY : light_robot_gennodejs
 
 # fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make light_robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
+light_robot_gennodejs/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/light_robot_gennodejs.dir/build.make light_robot/CMakeFiles/light_robot_gennodejs.dir/build
+.PHONY : light_robot_gennodejs/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/light_robot_geneus.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/light_robot_geneus.dir/rule
+.PHONY : light_robot/CMakeFiles/light_robot_geneus.dir/rule
+
+# Convenience name for target.
+light_robot_geneus: light_robot/CMakeFiles/light_robot_geneus.dir/rule
+
+.PHONY : light_robot_geneus
+
+# fast build rule for target.
+light_robot_geneus/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/light_robot_geneus.dir/build.make light_robot/CMakeFiles/light_robot_geneus.dir/build
+.PHONY : light_robot_geneus/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/talker.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/talker.dir/rule
+.PHONY : light_robot/CMakeFiles/talker.dir/rule
+
+# Convenience name for target.
+talker: light_robot/CMakeFiles/talker.dir/rule
+
+.PHONY : talker
+
+# fast build rule for target.
+talker/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/talker.dir/build.make light_robot/CMakeFiles/talker.dir/build
+.PHONY : talker/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/light_robot_generate_messages.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/light_robot_generate_messages.dir/rule
+.PHONY : light_robot/CMakeFiles/light_robot_generate_messages.dir/rule
+
+# Convenience name for target.
+light_robot_generate_messages: light_robot/CMakeFiles/light_robot_generate_messages.dir/rule
+
+.PHONY : light_robot_generate_messages
+
+# fast build rule for target.
+light_robot_generate_messages/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/light_robot_generate_messages.dir/build.make light_robot/CMakeFiles/light_robot_generate_messages.dir/build
+.PHONY : light_robot_generate_messages/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/light_robot_generate_messages_nodejs.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/light_robot_generate_messages_nodejs.dir/rule
+.PHONY : light_robot/CMakeFiles/light_robot_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+light_robot_generate_messages_nodejs: light_robot/CMakeFiles/light_robot_generate_messages_nodejs.dir/rule
+
+.PHONY : light_robot_generate_messages_nodejs
+
+# fast build rule for target.
+light_robot_generate_messages_nodejs/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/light_robot_generate_messages_nodejs.dir/build.make light_robot/CMakeFiles/light_robot_generate_messages_nodejs.dir/build
+.PHONY : light_robot_generate_messages_nodejs/fast
 
 # Convenience name for target.
 light_robot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
@@ -308,109 +578,88 @@ roscpp_generate_messages_cpp/fast:
 .PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
-light_robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : light_robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+light_robot/CMakeFiles/light_robot_generate_messages_cpp.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/light_robot_generate_messages_cpp.dir/rule
+.PHONY : light_robot/CMakeFiles/light_robot_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: light_robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+light_robot_generate_messages_cpp: light_robot/CMakeFiles/light_robot_generate_messages_cpp.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_nodejs
+.PHONY : light_robot_generate_messages_cpp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make light_robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+light_robot_generate_messages_cpp/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/light_robot_generate_messages_cpp.dir/build.make light_robot/CMakeFiles/light_robot_generate_messages_cpp.dir/build
+.PHONY : light_robot_generate_messages_cpp/fast
 
 # Convenience name for target.
-light_robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : light_robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+light_robot/CMakeFiles/light_robot_gencpp.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/light_robot_gencpp.dir/rule
+.PHONY : light_robot/CMakeFiles/light_robot_gencpp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_eus: light_robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+light_robot_gencpp: light_robot/CMakeFiles/light_robot_gencpp.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_eus
+.PHONY : light_robot_gencpp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make light_robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
+light_robot_gencpp/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/light_robot_gencpp.dir/build.make light_robot/CMakeFiles/light_robot_gencpp.dir/build
+.PHONY : light_robot_gencpp/fast
 
-# Convenience name for target.
-light_robot/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : light_robot/CMakeFiles/roscpp_generate_messages_py.dir/rule
+src/listener.o: src/listener.cpp.o
 
-# Convenience name for target.
-roscpp_generate_messages_py: light_robot/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : src/listener.o
 
-.PHONY : roscpp_generate_messages_py
+# target to build an object file
+src/listener.cpp.o:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/listener.dir/build.make light_robot/CMakeFiles/listener.dir/src/listener.cpp.o
+.PHONY : src/listener.cpp.o
 
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/roscpp_generate_messages_py.dir/build.make light_robot/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
+src/listener.i: src/listener.cpp.i
 
-# Convenience name for target.
-light_robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : light_robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : src/listener.i
 
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: light_robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+# target to preprocess a source file
+src/listener.cpp.i:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/listener.dir/build.make light_robot/CMakeFiles/listener.dir/src/listener.cpp.i
+.PHONY : src/listener.cpp.i
 
-.PHONY : rosgraph_msgs_generate_messages_cpp
+src/listener.s: src/listener.cpp.s
 
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make light_robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+.PHONY : src/listener.s
 
-# Convenience name for target.
-light_robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : light_robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+# target to generate assembly for a file
+src/listener.cpp.s:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/listener.dir/build.make light_robot/CMakeFiles/listener.dir/src/listener.cpp.s
+.PHONY : src/listener.cpp.s
 
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: light_robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+src/talker.o: src/talker.cpp.o
 
-.PHONY : rosgraph_msgs_generate_messages_lisp
+.PHONY : src/talker.o
 
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make light_robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+# target to build an object file
+src/talker.cpp.o:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/talker.dir/build.make light_robot/CMakeFiles/talker.dir/src/talker.cpp.o
+.PHONY : src/talker.cpp.o
 
-# Convenience name for target.
-light_robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : light_robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+src/talker.i: src/talker.cpp.i
 
-# Convenience name for target.
-std_msgs_generate_messages_py: light_robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+.PHONY : src/talker.i
 
-.PHONY : std_msgs_generate_messages_py
+# target to preprocess a source file
+src/talker.cpp.i:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/talker.dir/build.make light_robot/CMakeFiles/talker.dir/src/talker.cpp.i
+.PHONY : src/talker.cpp.i
 
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/std_msgs_generate_messages_py.dir/build.make light_robot/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
+src/talker.s: src/talker.cpp.s
 
-# Convenience name for target.
-light_robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : light_robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : src/talker.s
 
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: light_robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make light_robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
+# target to generate assembly for a file
+src/talker.cpp.s:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/talker.dir/build.make light_robot/CMakeFiles/talker.dir/src/talker.cpp.s
+.PHONY : src/talker.cpp.s
 
 # Help Target
 help:
@@ -425,6 +674,17 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... light_robot_gencpp"
+	@echo "... light_robot_generate_messages"
+	@echo "... light_robot_generate_messages_cpp"
+	@echo "... light_robot_generate_messages_eus"
+	@echo "... light_robot_generate_messages_lisp"
+	@echo "... light_robot_generate_messages_nodejs"
+	@echo "... light_robot_generate_messages_py"
+	@echo "... light_robot_geneus"
+	@echo "... light_robot_genlisp"
+	@echo "... light_robot_gennodejs"
+	@echo "... light_robot_genpy"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_lisp"
@@ -440,6 +700,14 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... listener"
+	@echo "... talker"
+	@echo "... src/listener.o"
+	@echo "... src/listener.i"
+	@echo "... src/listener.s"
+	@echo "... src/talker.o"
+	@echo "... src/talker.i"
+	@echo "... src/talker.s"
 .PHONY : help
 
 

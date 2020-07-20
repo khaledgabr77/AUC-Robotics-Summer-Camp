@@ -1,2 +1,4 @@
 # Hashes of file build rules.
+e4506514e88fed433e499d560a07485c /home/khaled/auc/Day4 /catkin_ws/devel/share/roseus/ros/light_robot/manifest.l
 0a4d0e6b4afbfdd2a9bad483352f7954 CMakeFiles/clean_test_results
+fbc9aa134a2467b72677f8a54b7ee819 light_robot/CMakeFiles/light_robot_generate_messages_eus
