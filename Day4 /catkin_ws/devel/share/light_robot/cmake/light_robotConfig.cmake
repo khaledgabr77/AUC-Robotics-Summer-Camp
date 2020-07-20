@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(light_robot_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/include " STREQUAL " ")
+if(NOT "/home/khaled/auc/Day4 /catkin_ws/devel/include;/home/khaled/auc/Day4 /catkin_ws/src/light_robot/include " STREQUAL " ")
   set(light_robot_INCLUDE_DIRS "")
-  set(_include_dirs "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/include")
+  set(_include_dirs "/home/khaled/auc/Day4 /catkin_ws/devel/include;/home/khaled/auc/Day4 /catkin_ws/src/light_robot/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/khaled/auc/Day4 /catkin_ws/devel/lib;/home/khaled/auc/Day4 /catkin_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/khaled/auc/Day4 /catkin_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -185,7 +185,7 @@ foreach(t ${light_robot_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "roscpp;rospy;std_msgs")
+set(depends "roscpp;rospy;std_msgs;message_runtime")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

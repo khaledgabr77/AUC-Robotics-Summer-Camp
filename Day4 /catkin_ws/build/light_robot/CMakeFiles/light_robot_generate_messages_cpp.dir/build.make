@@ -73,6 +73,17 @@ CMAKE_BINARY_DIR = "/home/khaled/auc/Day4 /catkin_ws/build"
 # Include the progress variables for this target.
 include light_robot/CMakeFiles/light_robot_generate_messages_cpp.dir/progress.make
 
+light_robot/CMakeFiles/light_robot_generate_messages_cpp: /home/khaled/auc/Day4\ /catkin_ws/devel/include/light_robot/auc.h
+
+
+/home/khaled/auc/Day4\ /catkin_ws/devel/include/light_robot/auc.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/khaled/auc/Day4\ /catkin_ws/devel/include/light_robot/auc.h: /home/khaled/auc/Day4\ /catkin_ws/src/light_robot/msg/auc.msg
+/home/khaled/auc/Day4\ /catkin_ws/devel/include/light_robot/auc.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/home/khaled/auc/Day4 /catkin_ws/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from light_robot/auc.msg"
+	cd "/home/khaled/auc/Day4 /catkin_ws/src/light_robot" && "/home/khaled/auc/Day4 /catkin_ws/build/catkin_generated/env_cached.sh" /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/khaled/auc/Day4\ /catkin_ws/src/light_robot/msg/auc.msg -Ilight_robot:/home/khaled/auc/Day4\ /catkin_ws/src/light_robot/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p light_robot -o /home/khaled/auc/Day4\ /catkin_ws/devel/include/light_robot -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+light_robot_generate_messages_cpp: light_robot/CMakeFiles/light_robot_generate_messages_cpp
+light_robot_generate_messages_cpp: /home/khaled/auc/Day4\ /catkin_ws/devel/include/light_robot/auc.h
 light_robot_generate_messages_cpp: light_robot/CMakeFiles/light_robot_generate_messages_cpp.dir/build.make
 
 .PHONY : light_robot_generate_messages_cpp

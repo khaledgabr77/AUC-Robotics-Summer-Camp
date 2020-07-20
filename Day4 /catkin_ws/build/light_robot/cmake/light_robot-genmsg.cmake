@@ -1,10 +1,8 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(WARNING "Invoking generate_messages() without having added any message or service file before.
-You should either add add_message_files() and/or add_service_files() calls or remove the invocation of generate_messages().")
-message(STATUS "light_robot: 0 messages, 0 services")
+message(STATUS "light_robot: 1 messages, 0 services")
 
-set(MSG_I_FLAGS "-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ilight_robot:/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -19,12 +17,23 @@ add_custom_target(light_robot_generate_messages ALL)
 
 
 
+get_filename_component(_filename "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg/auc.msg" NAME_WE)
+add_custom_target(_light_robot_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "light_robot" "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg/auc.msg" ""
+)
+
 #
 #  langs = gencpp;geneus;genlisp;gennodejs;genpy
 #
 
 ### Section generating for lang: gencpp
 ### Generating Messages
+_generate_msg_cpp(light_robot
+  "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg/auc.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/light_robot
+)
 
 ### Generating Services
 
@@ -40,6 +49,8 @@ add_custom_target(light_robot_generate_messages_cpp
 add_dependencies(light_robot_generate_messages light_robot_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg/auc.msg" NAME_WE)
+add_dependencies(light_robot_generate_messages_cpp _light_robot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(light_robot_gencpp)
@@ -50,6 +61,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS light_robot_generate_messages_cpp)
 
 ### Section generating for lang: geneus
 ### Generating Messages
+_generate_msg_eus(light_robot
+  "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg/auc.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/light_robot
+)
 
 ### Generating Services
 
@@ -65,6 +82,8 @@ add_custom_target(light_robot_generate_messages_eus
 add_dependencies(light_robot_generate_messages light_robot_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg/auc.msg" NAME_WE)
+add_dependencies(light_robot_generate_messages_eus _light_robot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(light_robot_geneus)
@@ -75,6 +94,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS light_robot_generate_messages_eus)
 
 ### Section generating for lang: genlisp
 ### Generating Messages
+_generate_msg_lisp(light_robot
+  "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg/auc.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/light_robot
+)
 
 ### Generating Services
 
@@ -90,6 +115,8 @@ add_custom_target(light_robot_generate_messages_lisp
 add_dependencies(light_robot_generate_messages light_robot_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg/auc.msg" NAME_WE)
+add_dependencies(light_robot_generate_messages_lisp _light_robot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(light_robot_genlisp)
@@ -100,6 +127,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS light_robot_generate_messages_lisp)
 
 ### Section generating for lang: gennodejs
 ### Generating Messages
+_generate_msg_nodejs(light_robot
+  "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg/auc.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/light_robot
+)
 
 ### Generating Services
 
@@ -115,6 +148,8 @@ add_custom_target(light_robot_generate_messages_nodejs
 add_dependencies(light_robot_generate_messages light_robot_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg/auc.msg" NAME_WE)
+add_dependencies(light_robot_generate_messages_nodejs _light_robot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(light_robot_gennodejs)
@@ -125,6 +160,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS light_robot_generate_messages_nodej
 
 ### Section generating for lang: genpy
 ### Generating Messages
+_generate_msg_py(light_robot
+  "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg/auc.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/light_robot
+)
 
 ### Generating Services
 
@@ -140,6 +181,8 @@ add_custom_target(light_robot_generate_messages_py
 add_dependencies(light_robot_generate_messages light_robot_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg/auc.msg" NAME_WE)
+add_dependencies(light_robot_generate_messages_py _light_robot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(light_robot_genpy)
@@ -160,6 +203,9 @@ endif()
 if(TARGET std_msgs_generate_messages_cpp)
   add_dependencies(light_robot_generate_messages_cpp std_msgs_generate_messages_cpp)
 endif()
+if(TARGET actionlib_msgs_generate_messages_cpp)
+  add_dependencies(light_robot_generate_messages_cpp actionlib_msgs_generate_messages_cpp)
+endif()
 
 if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/light_robot)
   # install generated code
@@ -170,6 +216,9 @@ if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/li
 endif()
 if(TARGET std_msgs_generate_messages_eus)
   add_dependencies(light_robot_generate_messages_eus std_msgs_generate_messages_eus)
+endif()
+if(TARGET actionlib_msgs_generate_messages_eus)
+  add_dependencies(light_robot_generate_messages_eus actionlib_msgs_generate_messages_eus)
 endif()
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/light_robot)
@@ -182,6 +231,9 @@ endif()
 if(TARGET std_msgs_generate_messages_lisp)
   add_dependencies(light_robot_generate_messages_lisp std_msgs_generate_messages_lisp)
 endif()
+if(TARGET actionlib_msgs_generate_messages_lisp)
+  add_dependencies(light_robot_generate_messages_lisp actionlib_msgs_generate_messages_lisp)
+endif()
 
 if(gennodejs_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/light_robot)
   # install generated code
@@ -192,6 +244,9 @@ if(gennodejs_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_D
 endif()
 if(TARGET std_msgs_generate_messages_nodejs)
   add_dependencies(light_robot_generate_messages_nodejs std_msgs_generate_messages_nodejs)
+endif()
+if(TARGET actionlib_msgs_generate_messages_nodejs)
+  add_dependencies(light_robot_generate_messages_nodejs actionlib_msgs_generate_messages_nodejs)
 endif()
 
 if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/light_robot)
@@ -204,4 +259,7 @@ if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ligh
 endif()
 if(TARGET std_msgs_generate_messages_py)
   add_dependencies(light_robot_generate_messages_py std_msgs_generate_messages_py)
+endif()
+if(TARGET actionlib_msgs_generate_messages_py)
+  add_dependencies(light_robot_generate_messages_py actionlib_msgs_generate_messages_py)
 endif()

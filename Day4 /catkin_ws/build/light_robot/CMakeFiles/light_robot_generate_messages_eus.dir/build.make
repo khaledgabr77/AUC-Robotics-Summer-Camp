@@ -73,14 +73,21 @@ CMAKE_BINARY_DIR = "/home/khaled/auc/Day4 /catkin_ws/build"
 # Include the progress variables for this target.
 include light_robot/CMakeFiles/light_robot_generate_messages_eus.dir/progress.make
 
+light_robot/CMakeFiles/light_robot_generate_messages_eus: /home/khaled/auc/Day4\ /catkin_ws/devel/share/roseus/ros/light_robot/msg/auc.l
 light_robot/CMakeFiles/light_robot_generate_messages_eus: /home/khaled/auc/Day4\ /catkin_ws/devel/share/roseus/ros/light_robot/manifest.l
 
 
+/home/khaled/auc/Day4\ /catkin_ws/devel/share/roseus/ros/light_robot/msg/auc.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/khaled/auc/Day4\ /catkin_ws/devel/share/roseus/ros/light_robot/msg/auc.l: /home/khaled/auc/Day4\ /catkin_ws/src/light_robot/msg/auc.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/home/khaled/auc/Day4 /catkin_ws/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from light_robot/auc.msg"
+	cd "/home/khaled/auc/Day4 /catkin_ws/build/light_robot" && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/khaled/auc/Day4\ /catkin_ws/src/light_robot/msg/auc.msg -Ilight_robot:/home/khaled/auc/Day4\ /catkin_ws/src/light_robot/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p light_robot -o /home/khaled/auc/Day4\ /catkin_ws/devel/share/roseus/ros/light_robot/msg
+
 /home/khaled/auc/Day4\ /catkin_ws/devel/share/roseus/ros/light_robot/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/home/khaled/auc/Day4 /catkin_ws/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp manifest code for light_robot"
-	cd "/home/khaled/auc/Day4 /catkin_ws/build/light_robot" && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/khaled/auc/Day4\ /catkin_ws/devel/share/roseus/ros/light_robot light_robot std_msgs
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/home/khaled/auc/Day4 /catkin_ws/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for light_robot"
+	cd "/home/khaled/auc/Day4 /catkin_ws/build/light_robot" && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/khaled/auc/Day4\ /catkin_ws/devel/share/roseus/ros/light_robot light_robot std_msgs actionlib_msgs
 
 light_robot_generate_messages_eus: light_robot/CMakeFiles/light_robot_generate_messages_eus
+light_robot_generate_messages_eus: /home/khaled/auc/Day4\ /catkin_ws/devel/share/roseus/ros/light_robot/msg/auc.l
 light_robot_generate_messages_eus: /home/khaled/auc/Day4\ /catkin_ws/devel/share/roseus/ros/light_robot/manifest.l
 light_robot_generate_messages_eus: light_robot/CMakeFiles/light_robot_generate_messages_eus.dir/build.make
 

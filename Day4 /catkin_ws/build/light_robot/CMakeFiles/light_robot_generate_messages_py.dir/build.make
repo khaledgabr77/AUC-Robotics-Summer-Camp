@@ -73,6 +73,23 @@ CMAKE_BINARY_DIR = "/home/khaled/auc/Day4 /catkin_ws/build"
 # Include the progress variables for this target.
 include light_robot/CMakeFiles/light_robot_generate_messages_py.dir/progress.make
 
+light_robot/CMakeFiles/light_robot_generate_messages_py: /home/khaled/auc/Day4\ /catkin_ws/devel/lib/python2.7/dist-packages/light_robot/msg/_auc.py
+light_robot/CMakeFiles/light_robot_generate_messages_py: /home/khaled/auc/Day4\ /catkin_ws/devel/lib/python2.7/dist-packages/light_robot/msg/__init__.py
+
+
+/home/khaled/auc/Day4\ /catkin_ws/devel/lib/python2.7/dist-packages/light_robot/msg/_auc.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/khaled/auc/Day4\ /catkin_ws/devel/lib/python2.7/dist-packages/light_robot/msg/_auc.py: /home/khaled/auc/Day4\ /catkin_ws/src/light_robot/msg/auc.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/home/khaled/auc/Day4 /catkin_ws/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG light_robot/auc"
+	cd "/home/khaled/auc/Day4 /catkin_ws/build/light_robot" && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/khaled/auc/Day4\ /catkin_ws/src/light_robot/msg/auc.msg -Ilight_robot:/home/khaled/auc/Day4\ /catkin_ws/src/light_robot/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p light_robot -o /home/khaled/auc/Day4\ /catkin_ws/devel/lib/python2.7/dist-packages/light_robot/msg
+
+/home/khaled/auc/Day4\ /catkin_ws/devel/lib/python2.7/dist-packages/light_robot/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/khaled/auc/Day4\ /catkin_ws/devel/lib/python2.7/dist-packages/light_robot/msg/__init__.py: /home/khaled/auc/Day4\ /catkin_ws/devel/lib/python2.7/dist-packages/light_robot/msg/_auc.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/home/khaled/auc/Day4 /catkin_ws/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for light_robot"
+	cd "/home/khaled/auc/Day4 /catkin_ws/build/light_robot" && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/khaled/auc/Day4\ /catkin_ws/devel/lib/python2.7/dist-packages/light_robot/msg --initpy
+
+light_robot_generate_messages_py: light_robot/CMakeFiles/light_robot_generate_messages_py
+light_robot_generate_messages_py: /home/khaled/auc/Day4\ /catkin_ws/devel/lib/python2.7/dist-packages/light_robot/msg/_auc.py
+light_robot_generate_messages_py: /home/khaled/auc/Day4\ /catkin_ws/devel/lib/python2.7/dist-packages/light_robot/msg/__init__.py
 light_robot_generate_messages_py: light_robot/CMakeFiles/light_robot_generate_messages_py.dir/build.make
 
 .PHONY : light_robot_generate_messages_py
