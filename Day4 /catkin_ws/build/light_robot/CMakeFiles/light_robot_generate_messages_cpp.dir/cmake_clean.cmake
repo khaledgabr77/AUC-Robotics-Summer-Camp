@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "/home/khaled/auc/Day4 /catkin_ws/devel/include/light_robot/AddTwoNum.h"
   "/home/khaled/auc/Day4 /catkin_ws/devel/include/light_robot/auc.h"
   "CMakeFiles/light_robot_generate_messages_cpp"
 )

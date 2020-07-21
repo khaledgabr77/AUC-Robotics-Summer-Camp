@@ -76,18 +76,6 @@ CMAKE_BINARY_DIR = "/home/khaled/auc/Day4 /catkin_ws/build"
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -154,6 +142,18 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/opt/cmake-3.18.0-rc1-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -306,6 +306,21 @@ light_robot_gencpp: light_robot/CMakeFiles/light_robot_gencpp.dir/rule
 light_robot_gencpp/fast:
 	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/light_robot_gencpp.dir/build.make light_robot/CMakeFiles/light_robot_gencpp.dir/build
 .PHONY : light_robot_gencpp/fast
+
+# Convenience name for target.
+light_robot/CMakeFiles/_light_robot_generate_messages_check_deps_AddTwoNum.dir/rule:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 light_robot/CMakeFiles/_light_robot_generate_messages_check_deps_AddTwoNum.dir/rule
+.PHONY : light_robot/CMakeFiles/_light_robot_generate_messages_check_deps_AddTwoNum.dir/rule
+
+# Convenience name for target.
+_light_robot_generate_messages_check_deps_AddTwoNum: light_robot/CMakeFiles/_light_robot_generate_messages_check_deps_AddTwoNum.dir/rule
+
+.PHONY : _light_robot_generate_messages_check_deps_AddTwoNum
+
+# fast build rule for target.
+_light_robot_generate_messages_check_deps_AddTwoNum/fast:
+	cd "/home/khaled/auc/Day4 /catkin_ws/build" && $(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/_light_robot_generate_messages_check_deps_AddTwoNum.dir/build.make light_robot/CMakeFiles/_light_robot_generate_messages_check_deps_AddTwoNum.dir/build
+.PHONY : _light_robot_generate_messages_check_deps_AddTwoNum/fast
 
 # Convenience name for target.
 light_robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
@@ -764,6 +779,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... _light_robot_generate_messages_check_deps_AddTwoNum"
 	@echo "... _light_robot_generate_messages_check_deps_auc"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_eus"

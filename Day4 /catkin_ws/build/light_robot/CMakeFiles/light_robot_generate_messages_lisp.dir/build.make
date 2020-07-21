@@ -74,6 +74,7 @@ CMAKE_BINARY_DIR = "/home/khaled/auc/Day4 /catkin_ws/build"
 include light_robot/CMakeFiles/light_robot_generate_messages_lisp.dir/progress.make
 
 light_robot/CMakeFiles/light_robot_generate_messages_lisp: /home/khaled/auc/Day4\ /catkin_ws/devel/share/common-lisp/ros/light_robot/msg/auc.lisp
+light_robot/CMakeFiles/light_robot_generate_messages_lisp: /home/khaled/auc/Day4\ /catkin_ws/devel/share/common-lisp/ros/light_robot/srv/AddTwoNum.lisp
 
 
 /home/khaled/auc/Day4\ /catkin_ws/devel/share/common-lisp/ros/light_robot/msg/auc.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
@@ -81,8 +82,14 @@ light_robot/CMakeFiles/light_robot_generate_messages_lisp: /home/khaled/auc/Day4
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/home/khaled/auc/Day4 /catkin_ws/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from light_robot/auc.msg"
 	cd "/home/khaled/auc/Day4 /catkin_ws/build/light_robot" && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/khaled/auc/Day4\ /catkin_ws/src/light_robot/msg/auc.msg -Ilight_robot:/home/khaled/auc/Day4\ /catkin_ws/src/light_robot/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p light_robot -o /home/khaled/auc/Day4\ /catkin_ws/devel/share/common-lisp/ros/light_robot/msg
 
+/home/khaled/auc/Day4\ /catkin_ws/devel/share/common-lisp/ros/light_robot/srv/AddTwoNum.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/khaled/auc/Day4\ /catkin_ws/devel/share/common-lisp/ros/light_robot/srv/AddTwoNum.lisp: /home/khaled/auc/Day4\ /catkin_ws/src/light_robot/srv/AddTwoNum.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/home/khaled/auc/Day4 /catkin_ws/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from light_robot/AddTwoNum.srv"
+	cd "/home/khaled/auc/Day4 /catkin_ws/build/light_robot" && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/khaled/auc/Day4\ /catkin_ws/src/light_robot/srv/AddTwoNum.srv -Ilight_robot:/home/khaled/auc/Day4\ /catkin_ws/src/light_robot/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p light_robot -o /home/khaled/auc/Day4\ /catkin_ws/devel/share/common-lisp/ros/light_robot/srv
+
 light_robot_generate_messages_lisp: light_robot/CMakeFiles/light_robot_generate_messages_lisp
 light_robot_generate_messages_lisp: /home/khaled/auc/Day4\ /catkin_ws/devel/share/common-lisp/ros/light_robot/msg/auc.lisp
+light_robot_generate_messages_lisp: /home/khaled/auc/Day4\ /catkin_ws/devel/share/common-lisp/ros/light_robot/srv/AddTwoNum.lisp
 light_robot_generate_messages_lisp: light_robot/CMakeFiles/light_robot_generate_messages_lisp.dir/build.make
 
 .PHONY : light_robot_generate_messages_lisp

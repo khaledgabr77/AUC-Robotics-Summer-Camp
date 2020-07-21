@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg/auc.msg"
-services_str = ""
+services_str = "/home/khaled/auc/Day4 /catkin_ws/src/light_robot/srv/AddTwoNum.srv"
 pkg_name = "light_robot"
 dependencies_str = "std_msgs;actionlib_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

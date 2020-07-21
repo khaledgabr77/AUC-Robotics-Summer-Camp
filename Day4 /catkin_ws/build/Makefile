@@ -409,6 +409,19 @@ light_robot_gencpp/fast:
 .PHONY : light_robot_gencpp/fast
 
 #=============================================================================
+# Target rules for targets named _light_robot_generate_messages_check_deps_AddTwoNum
+
+# Build rule for target.
+_light_robot_generate_messages_check_deps_AddTwoNum: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _light_robot_generate_messages_check_deps_AddTwoNum
+.PHONY : _light_robot_generate_messages_check_deps_AddTwoNum
+
+# fast build rule for target.
+_light_robot_generate_messages_check_deps_AddTwoNum/fast:
+	$(MAKE) $(MAKESILENT) -f light_robot/CMakeFiles/_light_robot_generate_messages_check_deps_AddTwoNum.dir/build.make light_robot/CMakeFiles/_light_robot_generate_messages_check_deps_AddTwoNum.dir/build
+.PHONY : _light_robot_generate_messages_check_deps_AddTwoNum/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_py
 
 # Build rule for target.
@@ -759,6 +772,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... _light_robot_generate_messages_check_deps_AddTwoNum"
 	@echo "... _light_robot_generate_messages_check_deps_auc"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_eus"
