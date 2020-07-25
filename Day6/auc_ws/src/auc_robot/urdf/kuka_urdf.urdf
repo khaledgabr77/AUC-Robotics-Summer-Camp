@@ -2,16 +2,11 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot
-  name="sh_urdf">
-  <link
-    name="base_link">
+<robot name="sh_urdf">
+  <link name="base_link">
     <inertial>
-      <origin
-        xyz="0.544335711418975 -0.110365407010606 0.358077288501735"
-        rpy="0 0 0" />
-      <mass
-        value="70.93843855572" />
+      <origin xyz="0.544335711418975 -0.110365407010606 0.358077288501735" rpy="0 0 0" />
+      <mass value="70.93843855572" />
       <inertia
         ixx="2.17816157599672"
         ixy="-0.0355455223260791"
@@ -21,37 +16,25 @@
         izz="2.23376305112291" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://sh_urdf/meshes/base_link.STL" />
+        <mesh filename="package://sh_urdf/meshes/base_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.917647058823529 0.43921568627451 0.0666666666666667 1" />
+      <material name="">
+        <color rgba="0.917647058823529 0.43921568627451 0.0666666666666667 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://sh_urdf/meshes/base_link.STL" />
+        <mesh filename="package://sh_urdf/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
-  <link
-    name="link 2">
+  <link name="link 2">
     <inertial>
-      <origin
-        xyz="0.141992279518663 0.0339314373720208 0.23259531915254"
-        rpy="0 0 0" />
-      <mass
-        value="29.9194441876778" />
+      <origin xyz="0.141992279518663 0.0339314373720208 0.23259531915254" rpy="0 0 0" />
+      <mass value="29.9194441876778" />
       <inertia
         ixx="0.494225779756372"
         ixy="0.00893057221525692"
@@ -84,19 +67,16 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="base rotate"
-    type="continuous">
-    <origin
-      xyz="0.54263 -0.51246 -0.15374"
-      rpy="1.5708 -0.37984 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="link 2" />
-    <axis
-      xyz="0 0 1" />
+
+
+  <joint name="base rotate" type="continuous">
+    <origin xyz="0.54263 -0.51246 -0.15374"  rpy="1.5708 -0.37984 0" />
+    <parent link="base_link" />
+    <child link="link 2" />
+    <axis xyz="0 0 1" />
   </joint>
+
+
   <link
     name="link 3">
     <inertial>
