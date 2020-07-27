@@ -2,4 +2,4 @@
 source_root_dir = "/home/khaled/auc/Day6/auc_ws/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/khaled/auc/Day6/auc_ws/devel;/opt/ros/kinetic".split(';') if "/home/khaled/auc/Day6/auc_ws/devel;/opt/ros/kinetic" != "" else []
+underlay_workspaces = "/opt/ros/kinetic".split(';') if "/opt/ros/kinetic" != "" else []

@@ -9,7 +9,7 @@ project(auc_robot)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   
-  roscpp
+  roscpp 
   rospy
 )
 

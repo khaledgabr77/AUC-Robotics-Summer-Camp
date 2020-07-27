@@ -1,6 +1,23 @@
 <?xml version="1.0"?>
 <robot>
 
+  <!--gazebo reference="left_wheel_hinge">
+      <mu1 value="10000.0" />
+      <mu2 value="10000.0" />
+      <kp value="100000.0" />
+      <kd value="0.00001" />
+      <maxVel value="1.0" />
+      <minDepth value="0.0001" />
+  </gazebo>    
+  <gazebo reference="right_wheel_hinge">
+      <mu1 value="10000.0" />
+      <mu2 value="10000.0" />
+      <kp value="100000.0" />
+      <kd value="0.00001" />
+      <maxVel value="1.0" />
+      <minDepth value="0.0001" />
+  </gazebo-->    
+
   <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
       <legacyMode>false</legacyMode>
@@ -14,20 +31,26 @@
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
-      <robotBaseFrame>robot_footprint</robotBaseFrame>
-      <publishWheelTF>false</publishWheelTF>
-      <publishWheelJointState>false</publishWheelJointState>
-      <rosDebugLevel>na</rosDebugLevel>
-      <wheelAcceleration>0</wheelAcceleration>
-      <wheelTorque>5</wheelTorque>
-      <odometrySource>world</odometrySource>
-      <publishTf>1</publishTf>
-      <publishOdomTF>true</publishOdomTF>
+      <robotBaseFrame>chassis</robotBaseFrame>
     </plugin>
   </gazebo>
 
-  <!-- camera -->
+
+  <gazebo reference="chassis">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="left_wheel">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="right_wheel">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+
   <gazebo reference="camera">
+    <material>Gazebo/Green</material>
     <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
       <camera name="head">
@@ -45,9 +68,9 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
-        <cameraName>camera</cameraName>
-        <imageTopicName>rgb/image_raw</imageTopicName>
-        <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+        <cameraName>mybot/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera</frameName>
         <hackBaseline>0.07</hackBaseline>
         <distortionK1>0.0</distortionK1>
@@ -61,7 +84,7 @@
 
   <!-- hokuyo -->
   <gazebo reference="hokuyo">
-    <sensor type="ray" name="head_hokuyo_sensor">
+    <sensor type="gpu_ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
       <update_rate>40</update_rate>
@@ -89,12 +112,11 @@
           <stddev>0.01</stddev>
         </noise>
       </ray>
-      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
-        <topicName>/scan</topicName>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+        <topicName>/mybot/laser/scan</topicName>
         <frameName>hokuyo</frameName>
       </plugin>
     </sensor>
   </gazebo>
-
 
 </robot>
