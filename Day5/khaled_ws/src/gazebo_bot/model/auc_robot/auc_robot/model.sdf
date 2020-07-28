@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
   <model name='auc_robot'>
-    <link name='link_0'>
+    <link name='chassis'>
       <inertial>
         <mass>1</mass>
         <inertia>
@@ -30,15 +30,9 @@
           <lighting>1</lighting>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Red</name>
           </script>
-          <shader type='pixel'>
-            <normal_map>__default__</normal_map>
-          </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          
         </material>
         <transparency>0</transparency>
         <cast_shadows>1</cast_shadows>
@@ -99,7 +93,7 @@
         </surface>
       </collision>
     </link>
-    <link name='link_1'>
+    <link name='right_wheel'>
       <inertial>
         <mass>1</mass>
         <inertia>
@@ -129,15 +123,10 @@
           <lighting>1</lighting>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Yellow</name>
+
           </script>
-          <shader type='pixel'>
-            <normal_map>__default__</normal_map>
-          </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+         
         </material>
         <transparency>0</transparency>
         <cast_shadows>1</cast_shadows>
@@ -199,7 +188,7 @@
         </surface>
       </collision>
     </link>
-    <link name='link_1_clone'>
+    <link name='left_wheel'>
       <inertial>
         <mass>1</mass>
         <inertia>
@@ -229,7 +218,8 @@
           <lighting>1</lighting>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name><Gazebo/>
+            <Yellow></Yellow></name>
           </script>
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
@@ -299,7 +289,7 @@
         </surface>
       </collision>
     </link>
-    <link name='link_2'>
+    <link name='castor '>
       <inertial>
         <mass>1</mass>
         <inertia>
@@ -328,7 +318,8 @@
           <lighting>1</lighting>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name><Gazebo/>
+            <White></White></name>
           </script>
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
@@ -397,7 +388,7 @@
         </surface>
       </collision>
     </link>
-    <link name='link_3'>
+    <link name='camera '>
       <inertial>
         <mass>1</mass>
         <inertia>
@@ -426,7 +417,8 @@
           <lighting>1</lighting>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name><Gazebo/>
+            <Blue></Blue></name>
           </script>
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
@@ -495,9 +487,9 @@
         </surface>
       </collision>
     </link>
-    <joint name='link_0_JOINT_0' type='revolute'>
-      <parent>link_0</parent>
-      <child>link_1</child>
+    <joint name='right_wheel_joint' type='revolute'>
+      <parent>chassis</parent>
+      <child>right_wheel</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <axis>
         <xyz>-0 -1 -0</xyz>
@@ -528,9 +520,9 @@
         </ode>
       </physics>
     </joint>
-    <joint name='link_0_JOINT_1' type='revolute'>
-      <parent>link_0</parent>
-      <child>link_1_clone</child>
+    <joint name='left_wheel_joint' type='revolute'>
+      <parent>chassis</parent>
+      <child>left_wheel</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
@@ -561,9 +553,9 @@
         </ode>
       </physics>
     </joint>
-    <joint name='link_0_JOINT_2' type='ball'>
-      <parent>link_0</parent>
-      <child>link_2</child>
+    <joint name='castor_joint' type='ball'>
+      <parent>chassis</parent>
+      <child>castor </child>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <physics>
         <ode>
@@ -578,9 +570,9 @@
         </ode>
       </physics>
     </joint>
-    <joint name='link_0_JOINT_3' type='fixed'>
-      <parent>link_0</parent>
-      <child>link_3</child>
+    <joint name='camera_joint' type='fixed'>
+      <parent>chassis</parent>
+      <child>camera </child>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <physics>
         <ode>
