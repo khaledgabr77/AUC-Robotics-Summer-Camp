@@ -8,6 +8,8 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/khaled/auc/Day5/khaled_ws/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/khaled/auc/Day5/khaled_ws/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/khaled/auc/Day5/khaled_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/khaled/auc/Day5/khaled_ws/build"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/khaled/auc/Day5/khaled_ws/devel/share/common-lisp"
 export ROS_PACKAGE_PATH="/home/khaled/auc/Day5/khaled_ws/src:$ROS_PACKAGE_PATH"
