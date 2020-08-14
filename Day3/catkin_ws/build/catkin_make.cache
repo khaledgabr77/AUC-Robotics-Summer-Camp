@@ -1,2 +1,2 @@
-simple_arm
+simple_arm:src/ball_chaser:src/my_robot
 -DCATKIN_DEVEL_PREFIX=/home/khaled/auc/Day3/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/khaled/auc/Day3/catkin_ws/install -G Unix Makefiles
