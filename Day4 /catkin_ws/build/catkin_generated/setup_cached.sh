@@ -7,3 +7,7 @@
 # new environment variables
 
 # modified environment variables
+export LD_LIBRARY_PATH='/opt/ros/melodic/lib:/lib64:/usr/lib/x86_64-linux-gnu/'
+export PKG_CONFIG_PATH='/opt/ros/melodic/lib/pkgconfig'
+export PWD='/home/khaled/auc/Day4 /catkin_ws/build'
+export PYTHONPATH='/opt/ros/melodic/lib/python2.7/dist-packages'

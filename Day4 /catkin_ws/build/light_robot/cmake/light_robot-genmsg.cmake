@@ -2,7 +2,7 @@
 
 message(STATUS "light_robot: 1 messages, 1 services")
 
-set(MSG_I_FLAGS "-Ilight_robot:/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ilight_robot:/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg;-Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)

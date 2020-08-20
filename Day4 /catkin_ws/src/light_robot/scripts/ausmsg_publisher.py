@@ -11,7 +11,7 @@ pub = rospy.Publisher('sensor_topic', auc, queue_size=10)
 rospy.init_node('publisher_node', anonymous=True)
 
 #set the loop rate
-rate = rospy.Rate(1) # 1hz
+rate = rospy.Rate(0.5) # 1hz
 #keep publishing until a Ctrl-C is pressed
 i = 0
 while not rospy.is_shutdown():

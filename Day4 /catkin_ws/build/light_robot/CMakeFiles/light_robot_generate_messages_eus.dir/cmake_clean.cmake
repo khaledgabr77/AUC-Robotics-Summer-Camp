@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "/home/khaled/auc/Day4 /catkin_ws/devel/share/roseus/ros/light_robot/manifest.l"
+  "CMakeFiles/light_robot_generate_messages_eus"
   "/home/khaled/auc/Day4 /catkin_ws/devel/share/roseus/ros/light_robot/msg/auc.l"
   "/home/khaled/auc/Day4 /catkin_ws/devel/share/roseus/ros/light_robot/srv/AddTwoNum.l"
-  "CMakeFiles/light_robot_generate_messages_eus"
+  "/home/khaled/auc/Day4 /catkin_ws/devel/share/roseus/ros/light_robot/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

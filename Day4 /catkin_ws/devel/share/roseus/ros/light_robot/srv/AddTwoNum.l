@@ -179,7 +179,7 @@
 (setf (get light_robot::AddTwoNumRequest :datatype-) "light_robot/AddTwoNumRequest")
 (setf (get light_robot::AddTwoNumRequest :definition-)
       "int64 x
-int64 y
+int64 y 
 
 ---
 
@@ -192,7 +192,7 @@ int64 sum
 (setf (get light_robot::AddTwoNumResponse :datatype-) "light_robot/AddTwoNumResponse")
 (setf (get light_robot::AddTwoNumResponse :definition-)
       "int64 x
-int64 y
+int64 y 
 
 ---
 

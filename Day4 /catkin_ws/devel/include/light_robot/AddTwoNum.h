@@ -57,8 +57,8 @@ struct DataType< ::light_robot::AddTwoNum > {
 };
 
 
-// service_traits::MD5Sum< ::light_robot::AddTwoNumRequest> should match 
-// service_traits::MD5Sum< ::light_robot::AddTwoNum > 
+// service_traits::MD5Sum< ::light_robot::AddTwoNumRequest> should match
+// service_traits::MD5Sum< ::light_robot::AddTwoNum >
 template<>
 struct MD5Sum< ::light_robot::AddTwoNumRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::light_robot::AddTwoNumRequest>
   }
 };
 
-// service_traits::DataType< ::light_robot::AddTwoNumRequest> should match 
-// service_traits::DataType< ::light_robot::AddTwoNum > 
+// service_traits::DataType< ::light_robot::AddTwoNumRequest> should match
+// service_traits::DataType< ::light_robot::AddTwoNum >
 template<>
 struct DataType< ::light_robot::AddTwoNumRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::light_robot::AddTwoNumRequest>
   }
 };
 
-// service_traits::MD5Sum< ::light_robot::AddTwoNumResponse> should match 
-// service_traits::MD5Sum< ::light_robot::AddTwoNum > 
+// service_traits::MD5Sum< ::light_robot::AddTwoNumResponse> should match
+// service_traits::MD5Sum< ::light_robot::AddTwoNum >
 template<>
 struct MD5Sum< ::light_robot::AddTwoNumResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::light_robot::AddTwoNumResponse>
   }
 };
 
-// service_traits::DataType< ::light_robot::AddTwoNumResponse> should match 
-// service_traits::DataType< ::light_robot::AddTwoNum > 
+// service_traits::DataType< ::light_robot::AddTwoNumResponse> should match
+// service_traits::DataType< ::light_robot::AddTwoNum >
 template<>
 struct DataType< ::light_robot::AddTwoNumResponse>
 {

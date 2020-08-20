@@ -78,7 +78,7 @@ class AddTwoNumRequest {
     // Returns full string definition for message
     return `
     int64 x
-    int64 y
+    int64 y 
     
     
     `;

@@ -66,6 +66,21 @@ ros::message_operations::Printer< ::light_robot::AddTwoNumRequest_<ContainerAllo
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::light_robot::AddTwoNumRequest_<ContainerAllocator1> & lhs, const ::light_robot::AddTwoNumRequest_<ContainerAllocator2> & rhs)
+{
+  return lhs.x == rhs.x &&
+    lhs.y == rhs.y;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::light_robot::AddTwoNumRequest_<ContainerAllocator1> & lhs, const ::light_robot::AddTwoNumRequest_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace light_robot
 
 namespace ros
@@ -73,12 +88,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'light_robot': ['/home/khaled/auc/Day4 /catkin_ws/src/light_robot/msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'actionlib_msgs': ['/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -143,10 +152,10 @@ struct Definition< ::light_robot::AddTwoNumRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int64 x\n\
-int64 y\n\
-\n\
-";
+    return "int64 x\n"
+"int64 y \n"
+"\n"
+;
   }
 
   static const char* value(const ::light_robot::AddTwoNumRequest_<ContainerAllocator>&) { return value(); }

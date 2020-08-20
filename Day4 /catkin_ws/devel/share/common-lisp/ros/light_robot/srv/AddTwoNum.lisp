@@ -97,10 +97,10 @@
   "875493d2ec8f0bdc18c62960322c94b7")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<AddTwoNum-request>)))
   "Returns full string definition for message of type '<AddTwoNum-request>"
-  (cl:format cl:nil "int64 x~%int64 y~%~%~%~%"))
+  (cl:format cl:nil "int64 x~%int64 y ~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'AddTwoNum-request)))
   "Returns full string definition for message of type 'AddTwoNum-request"
-  (cl:format cl:nil "int64 x~%int64 y~%~%~%~%"))
+  (cl:format cl:nil "int64 x~%int64 y ~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <AddTwoNum-request>))
   (cl:+ 0
      8
